@@ -17,53 +17,60 @@ import random
 from tkinter import Y
 
 # print(f"How does {random.choice(destination)} sound?")
+def random_destination_generator():
+    FLAG = True
+    while FLAG:
+        randomly_selected_destination = random.choice(destination)
+        print(f"How does {randomly_selected_destination} sound?")
+        user_choice = input("Enter y/n: ")
+        if user_choice == "y":
+            FLAG = False
+            return randomly_selected_destination
 
-FLAG = True
-while FLAG:
-    randomly_selected_destination = random.choice(destination)
-    print(f"How does {randomly_selected_destination} sound?")
-    user_choice = input("Enter y/n: ")
-    if user_choice == "y":
-        FLAG = False
-    else:
-        continue
+destination_selected = random_destination_generator()
 
 print("Awesome next lets select your transportation!")
-    
-FLAG = True
-while FLAG:
-    randomly_selected_transportation = random.choice(transportation)
-    print(f"How does a {randomly_selected_transportation} sound?")
-    user_choice = input("Enter y/n: ")
-    if user_choice == "y":
-        FLAG = False
-    else:
-        continue
+
+def random_transportation_generator():    
+    FLAG = True
+    while FLAG:
+        randomly_selected_transportation = random.choice(transportation)
+        print(f"How does a {randomly_selected_transportation} sound?")
+        user_choice = input("Enter y/n: ")
+        if user_choice == "y":
+            FLAG = False
+            return randomly_selected_transportation
+
+transportation_selected = random_transportation_generator()           
 
 print("Great! We're going to choose some entertainment next.")
 
-FLAG = True
-while FLAG:
-    randomly_selected_entertainment = random.choice(entertainment)
-    print(f"Does {randomly_selected_entertainment} sound good to you?")
-    user_choice = input("Enter y/n: ")
-    if user_choice == "y":
-        FLAG = False
-    else:
-        continue
+def random_entertainment_generator():
+    FLAG = True
+    while FLAG:
+        randomly_selected_entertainment = random.choice(entertainment)
+        print(f"Does {randomly_selected_entertainment} sound good to you?")
+        user_choice = input("Enter y/n: ")
+        if user_choice == "y":
+            FLAG = False
+            return randomly_selected_entertainment
+
+entertainment_selected = random_entertainment_generator()           
 
 print("Perfect! One more thing and we're finished. Time to choose your dining options.")
 
-FLAG = True
-while FLAG:
-    randomly_selected_dinner = random.choice(dinner)
-    print(f"How does {randomly_selected_dinner} sound?")
-    user_choice = input("Enter y/n: ")
-    if user_choice == "y":
-        FLAG = False
-    else:
-        continue
+def random_dinner_generator():
+    FLAG = True
+    while FLAG:
+        randomly_selected_dinner = random.choice(dinner)
+        print(f"How does {randomly_selected_dinner} sound?")
+        user_choice = input("Enter y/n: ")
+        if user_choice == "y":
+            FLAG = False
+            return randomly_selected_dinner
+
+dinner_selected = random_dinner_generator()          
 
 print("Great news, your day trip has been completed lets give you a rundown of what you'll be doing.")
 
-print(f"For your destination you will be going to {randomly_selected_destination} traveling by {randomly_selected_transportation}. Your entertainment for the day will be {randomly_selected_entertainment} capping the night off with {randomly_selected_dinner} for your meal!")
+print(f"For your destination you will be going to {destination_selected} traveling by {transportation_selected}. Your entertainment for the day will be {entertainment_selected} capping the night off with {dinner_selected} for your meal!")
